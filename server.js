@@ -4,7 +4,7 @@ const mongoose = require ('mongoose');
 const UserRouter = require('./routes/user'); //importing routes
 require('dotenv').config();
 
-var name ="me";
+
 
 const app = express();
 const port = process.env.PORT || 8080;  //sya muy maghimo ug paagi nga butangan ug location ang 500
@@ -21,7 +21,7 @@ connection.once('open', ()=> { //connecting to mongodb
 
 })
 //gamiton ang routes
-app.use('.user',UserRouter);//duha ka routes ang gamiton
+app.use('/user',UserRouter);//duha ka routes ang gamiton
 app.listen(port, () => {
     console.log('Server is running at port: ' + port);
 });
